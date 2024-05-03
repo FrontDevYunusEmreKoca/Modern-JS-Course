@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        //parent sinif
+        class Kisi {
+            constructor (ad, dogumYili){
+                console.log("kisi constructor")
+                this.ad = ad;
+                this.dogumYili = dogumYili;
+            }
+
+            yasHesapla(){
+                let tarih = new Date().getFullYear();
+                return tarih - this.dogumYili;
+            }
+            kendiniTanit (){
+                return `benim adim ${this.ad}`
+            }
+        }
+
+
+        //child sinif
+        class Ogrenci extends Kisi{ // extends ettik ya burada kisideki ozellikler de ogrenciye atanmis oldu
+            constructor (ad,dogumYili, OkulNo){
+                console.log("ogrenci constructor")
+                //this.ad = ad;
+                //this.dogumYili = dogumYili;
+                super(ad,dogumYili);  // buradaki super metodu aslinda yukarda yorum satirina aldigimiz seylerin temsili 
+                this.OkulNo = OkulNo;
+            }
+            dersCalis(){
+               return (`${this.ad} ders calisiyor`)
+            }
+            kendiniTanit (){
+                return `benim adim ${this.ad} ve okul numaram ${this.OkulNo}`
+            }
+        }
+
+        let kisi = new Kisi ("Yunus",1990);
+        let ogrenci = new Ogrenci ("Emre" ,2003 , 124)
+
+
+        console.log(kisi.yasHesapla());
+        console.log(ogrenci.yasHesapla());
+        console.log(ogrenci.dersCalis());
+        console.log(kisi.kendiniTanit());
+        console.log(ogrenci.kendiniTanit());
+
+
+    </script>
+</body>
+</html>
