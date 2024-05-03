@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const sayilar = new Set();
+        sayilar.add(1);
+        sayilar.add(2);
+        sayilar.add(3);
+        sayilar.add(3); // 3 tekrarladigindan dolayi sadece 1 kere 3 yazar
+        sayilar.add("4");
+
+        sayilar.delete(2) // value giriyorsun indeks degil
+        console.log(sayilar.has(2))
+        //sayilar.clear();
+
+
+        for (let x of sayilar.values()){
+            console.log(x)
+        }
+
+        //const dizi = [...sayilar]
+        console.log(sayilar);
+    </script>
+
+
+
+
+</body>
+</html>
