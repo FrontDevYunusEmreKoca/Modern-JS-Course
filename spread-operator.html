@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        const mesaj = ["benim", "adim ", "Yunus", "Emre"];
+        	
+        let sonuc = "";
+        for (let x of mesaj){
+            sonuc += x + " ";
+        }
+        console.log(sonuc)
+
+        console.log(...mesaj) // uc nokta burada spread operatordur.
+
+        const dizi1 = ["bir", "iki"];
+        const dizi2 = ["uc", "dort"];
+
+        const dizi3 =  [...dizi1, ...dizi2] // iki diziyi birlestirir.
+
+        console.log(dizi3)
+
+
+        const sayilar = [1,2,3];
+
+        //const sayilar2 = sayilar;// referans kopyalama
+
+        const sayilar2 = [...sayilar];
+        sayilar[0]= 10;
+
+        console.log(sayilar, sayilar2)
+
+
+        const user = {
+            username :"YunusEmre",
+            email : "kocay1857@gmail.com"
+        }
+          
+
+        const adres = {
+            city: "istanbul"
+        }
+           
+        console.log({...user, ...adres} );
+
+        // rest parameters
+
+        function toplam (...args){
+            let sonuc = 0;
+
+            for (let sayi of args){
+                sonuc += sayi;
+            }
+            return sonuc;
+
+        }
+        console.log(toplam(1,3,5,6,71))
+        
+
+        function bilgileriGosgter (isim, soyad, ...adress){
+            console.log(isim,soyad,adress)
+        }
+        bilgileriGosgter ("yunus", "emre", "istanbul", "basaksehir")
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
