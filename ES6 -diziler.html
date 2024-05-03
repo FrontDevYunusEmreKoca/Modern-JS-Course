@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const sayilar = [1,2,3,4,5,6,7];
+        const urunler = [
+            {urun_adi: "Iphone 11 ", fiyat: "12.000 "},
+            {urun_adi: "Iphone 12 ", fiyat: "13.000 "},
+            {urun_adi: "Iphone 13 ", fiyat: "14.000 "},
+            {urun_adi: "Iphone 14 ", fiyat: "15.000 "},
+            {urun_adi: "Iphone 15 ", fiyat: "16.000 "}
+
+        ];
+
+          // const teksayilar = sayilar.map((sayi) => sayi % 2 ==1); // map degeri gonderirsen true false olarak cikti verir , filter elemanlarin ciktisini verir
+ 
+
+        //const sonuc = urunler.map(urun => urunler);
+        //const sonuc = urunler.filter(urun => urunler);
+        //const sonuc = urunler.map(urun => urun.urun_adi);
+        const sonuc = urunler.filter(urun => urun.fiyat >= 15.000).map(urun => urun.urun_adi); //filtreliyorsan filter kullan.
+        //const sonuc = urunler.find (urun => urun.fiyat > 12.000); // buldugu ilk elemani bize gonderir.
+       // const sonuc = urunler.findIndex (urun => urun.fiyat > 12.000); // buldugu ilk elemanin indeksini  bize gonderir.
+     
+      
+        console.log(sonuc)
+
+
+
+    </script>
+    
+</body>
+</html>
