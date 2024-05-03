@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //array destructuring
+
+        let user  = ["yunus" , "emre", "istanbul", "basaksehir" , "32470"];
+
+        // let firstname = name[0];
+        // let lastname = name [1];
+
+        //let [firstname , lastname ] = name; // buradaki birinci eleman name in 0.indeksdeki elemani first name esit , name in 1.indeksdeki elemani lastname e esit 
+        //let [firstname , lastname,  ] = "yunus emre".split( " ");
+        let [firstname , lastname, ...adres  ] = user; // sehiri almak istemedik ve yapmamiz gereken virgul koyup ayirmak
+
+        console.log(firstname,lastname,  adres);
+
+
+
+        // object destructruing 
+
+        let urun = {
+            marka : "iphone",
+            model : "iphone 13",
+            fiyat : "20000",
+            
+        }
+     
+        function urungoster (obj){
+            let {marka,model,fiyat=0,satisdurumu = false} = obj;
+            console.log(marka,model,fiyat,satisdurumu)
+        }
+        urungoster(urun);
+
+
+
+
+
+
+    </script>
+</body>
+</html>
